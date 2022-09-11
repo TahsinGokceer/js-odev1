@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="a.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="center">KODLUYORUZ</h1>
+    <h2 id="name" class="center"></h2>
+    <h3 id="zaman" class="center"></h3>
+
+    <p class="center">tarihinde Kodluyoruz Fronted Web Development Patikası'nın javascript bölümü 1. Ödevindesiniz</p>
+
+
+    <script>
+
+        let name = prompt("Adınızı giriniz : ")
+        let info = document.querySelector("#name")
+        info.innerHTML = `Merhaba ${name}. Hoş Geldin`
+
+        function showTime(){
+            let date = new Date
+            let hour = date.getHours()
+            let minute = date.getMinutes()
+            let second = date.getSeconds()
+
+            minute = checkTime(minute)
+            second = checkTime(second)
+
+            document.querySelector("#zaman").innerHTML = `${hour}:${minute}:${second}`
+            setTimeout(showTime, 1000)
+        }
+
+        function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+        }
+
+      showTime()
+    </script>
+
+
+</body>
+</html>
